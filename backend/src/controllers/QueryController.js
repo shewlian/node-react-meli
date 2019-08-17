@@ -6,7 +6,6 @@ const uniq = require('../utils/uniq')
 module.exports = {
   async index(request, response) {
     const { q: query } = request.query
-    const { name, lastname } = request.headers
 
     if (!query) {
       return response.json({ message: 'No query (q) provided.' })
@@ -37,8 +36,8 @@ module.exports = {
 
     const queryResponse = {
       author: {
-        name,
-        lastname
+        name: 'Julian',
+        lastname: 'Leodriguez'
       },
       categories,
       items
