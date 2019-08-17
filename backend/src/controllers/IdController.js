@@ -11,25 +11,21 @@ module.exports = {
       axios.get(`https://api.mercadolibre.com/items/${productId}/description`)
     ])
 
-    const {
-      id,
-      title,
-      currency_id,
-      price,
-      pictures,
-      condition,
-      shipping,
-      sold_quantity
-    } = meliApiResponse[0].data
+    const item = () => {
+      const {
+        id,
+        title,
+        currency_id,
+        price,
+        pictures,
+        condition,
+        shipping,
+        sold_quantity
+      } = meliApiResponse[0].data
 
-    const { plain_text } = meliApiResponse[1].data
+      const { plain_text } = meliApiResponse[1].data
 
-    const queryResponse = {
-      author: {
-        name: '',
-        lastname: ''
-      },
-      item: {
+      return {
         id,
         title,
         price: {
@@ -43,6 +39,14 @@ module.exports = {
         sold_quantity,
         description: plain_text
       }
+    }
+
+    const queryResponse = {
+      author: {
+        name: '',
+        lastname: ''
+      },
+      item: item()
     }
 
     return response.json(queryResponse)
