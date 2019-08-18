@@ -4,11 +4,11 @@ const countDecimals = require('../utils/countDecimals')
 
 module.exports = {
   async index(request, response) {
-    const { productId } = request.params
+    const { id } = request.params
 
     const meliApiResponse = await axios.all([
-      axios.get(`https://api.mercadolibre.com/items/${productId}`),
-      axios.get(`https://api.mercadolibre.com/items/${productId}/description`)
+      axios.get(`https://api.mercadolibre.com/items/${id}`),
+      axios.get(`https://api.mercadolibre.com/items/${id}/description`)
     ])
 
     const item = () => {

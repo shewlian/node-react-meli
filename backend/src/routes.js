@@ -5,6 +5,6 @@ const IdController = require('./controllers/IdController')
 const routes = express.Router()
 
 routes.get('/api/items', QueryController.index)
-routes.get('/api/items/:productId', IdController.index)
+routes.get('/api/items/:id', IdController.index)
 
 module.exports = routes
