@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom'
 import api from '../services/api'
 
 export default function SearchResults({ location }) {
-  const params = new URLSearchParams(location.search)
-  const query = params.get('search')
-
   const [ results, setResults ] = useState([])
 
   useEffect(() => {
     async function loadResults() {
+      const params = new URLSearchParams(location.search)
+      const query = params.get('search')
+
       const response = await api.get(`?q=${query}`)
 
       setResults(response.data.items.slice(0, 4))
     }
 
     loadResults()
-  }, [query])
+  }, [location.search])
 
   return (
     <div className="searchresults">
