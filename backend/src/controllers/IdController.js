@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const countDecimals = require('../utils/countDecimals')
+const getDecimals = require('../utils/getDecimals')
 
 module.exports = {
   async index(request, response) {
@@ -31,7 +31,7 @@ module.exports = {
         price: {
           currency: currency_id,
           amount: price,
-          decimals: countDecimals(price)
+          decimals: getDecimals(price)
         },
         picture: pictures[0].url,
         condition,

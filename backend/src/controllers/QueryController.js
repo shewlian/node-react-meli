@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const countDecimals = require('../utils/countDecimals')
+const getDecimals = require('../utils/getDecimals')
 const uniq = require('../utils/uniq')
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
         price: {
           currency: currency_id,
           amount: price,
-          decimals: countDecimals(price)
+          decimals: getDecimals(price)
         },
         picture: thumbnail,
         condition,
