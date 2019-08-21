@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import api from '../services/api'
+import formatCurrency from '../utils/format-currency'
 
 export default function SearchResults({ location }) {
   const [ results, setResults ] = useState([])
@@ -11,7 +12,7 @@ export default function SearchResults({ location }) {
       const params = new URLSearchParams(location.search)
       const query = params.get('search')
 
-      const response = await api.get(`?q=${query}`)
+      const response = await api.get(`/api/items?q=${query}`)
 
       setResults(response.data.items.slice(0, 4))
     }
@@ -37,7 +38,17 @@ export default function SearchResults({ location }) {
                   </figure>
                   <div className="media-content">
                     <h2>{result.title}</h2>
-                    <p>{result.price.amount}</p>
+                    <p>
+                      <strong>
+                        {formatCurrency(result.price.amount)}
+                        {result.price.decimals > 0 &&
+                          <React.Fragment>
+                            <span className="visually-hidden">,</span>
+                            <span>{result.price.decimals}</span>
+                          </React.Fragment>
+                        }
+                      </strong>
+                    </p>
                     {result.free_shipping &&
                       <p>Envío gratis</p>
                     }
