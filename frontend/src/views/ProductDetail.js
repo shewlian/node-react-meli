@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
+import SearchBox from '../components/SearchBox'
 import Breadcrumb from '../components/Breadcrumb'
 import ProductDetailComponent from '../components/ProductDetail'
 
 import api from '../services/api'
 import setPageTitle from '../utils/set-page-title'
 
-export default function ProductDetail({ match }) {
+export default function ProductDetail({ match, location, history }) {
   const [ details, setDetails ] = useState({})
 
   useEffect(() => {
@@ -26,9 +26,8 @@ export default function ProductDetail({ match }) {
 
   return (
     <div className="productdetail">
-      <Link to='/'>
-        Home
-      </Link>
+      <SearchBox location={location} history={history}/>
+
       <div className="productdetail-contents">
         <Breadcrumb/>
 

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
+import SearchBox from '../components/SearchBox'
 import Breadcrumb from '../components/Breadcrumb'
 import SearchResult from '../components/SearchResult'
 
 import api from '../services/api'
 import setPageTitle from '../utils/set-page-title'
 
-export default function SearchResults({ location }) {
+export default function SearchResults({ location, history }) {
   const [ results, setResults ] = useState([])
 
   useEffect(() => {
@@ -27,9 +27,7 @@ export default function SearchResults({ location }) {
 
   return (
     <div className="searchresults">
-      <Link to='/'>
-        Home
-      </Link>
+      <SearchBox location={location} history={history}/>
 
       <Breadcrumb/>
 
