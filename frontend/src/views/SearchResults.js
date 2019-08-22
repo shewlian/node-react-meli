@@ -8,7 +8,7 @@ import api from '../services/api'
 import setPageTitle from '../utils/set-page-title'
 
 export default function SearchResults({ location, history }) {
-  const [ results, setResults ] = useState([])
+  const [ results, setResults ] = useState(null)
 
   useEffect(() => {
     async function loadResults() {
@@ -31,23 +31,28 @@ export default function SearchResults({ location, history }) {
 
       <Breadcrumb/>
 
-      { results.length ? (
-        <ol>
-          {results.map(result => (
-            <li key={result.id}>
-              <SearchResult result={result}/>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <div className="searchresults-none">
-          <h2>No hay publicaciones que coincidan con tu búsqueda.</h2>
-          <ul>
-            <li>Revisá la ortografía de la palabra.</li>
-            <li>Utilizá palabras más genéricas o menos palabras.</li>
-          </ul>
-        </div>
-      ) }
+      { !results
+        ? <p>Cargando...</p>
+        : results.length
+        ? (
+          <ol>
+            {results.map(result => (
+              <li key={result.id}>
+                <SearchResult result={result}/>
+              </li>
+            ))}
+          </ol>
+          )
+        : (
+          <div className="searchresults-none">
+            <h2>No hay publicaciones que coincidan con tu búsqueda.</h2>
+            <ul>
+              <li>Revisá la ortografía de la palabra.</li>
+              <li>Utilizá palabras más genéricas o menos palabras.</li>
+            </ul>
+          </div>
+          )
+      }
     </div>
   )
 }

@@ -8,7 +8,7 @@ import api from '../services/api'
 import setPageTitle from '../utils/set-page-title'
 
 export default function ProductDetail({ match, location, history }) {
-  const [ details, setDetails ] = useState({})
+  const [ details, setDetails ] = useState(null)
 
   useEffect(() => {
     async function loadDetails() {
@@ -31,7 +31,10 @@ export default function ProductDetail({ match, location, history }) {
       <div className="productdetail-contents">
         <Breadcrumb/>
 
-        <ProductDetailComponent details={details}/>
+        { !details
+          ? <p>Cargando...</p>
+          : <ProductDetailComponent details={details}/>
+        }
       </div>
     </div>
   )
