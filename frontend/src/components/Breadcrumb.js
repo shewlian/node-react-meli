@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function () {
+export default function Breadcrumb() {
   return (
     <ol vocab="http://schema.org/" typeof="BreadcrumbList">
       <li property="itemListElement" typeof="ListItem">

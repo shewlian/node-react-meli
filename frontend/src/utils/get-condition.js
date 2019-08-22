@@ -1,4 +1,4 @@
-export default function (condition) {
+export default function getCondition(condition) {
   return {
     'new': 'Nuevo',
     'used': 'Usado'

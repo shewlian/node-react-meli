@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 
 import formatCurrency from '../utils/format-currency'
 
-export default function (props) {
-  const { result } = props
-
+export default function SearchResult({ result }) {
   return (
     <article className="media">
       <Link to={`/items/${result.id}`}>
