@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import api from '../services/api'
+import setPageTitle from '../utils/set-page-title'
 import formatCurrency from '../utils/format-currency'
 import pluralize from '../utils/pluralize'
 import getCondition from '../utils/get-condition'
@@ -16,6 +17,8 @@ export default function ProductDetail({ match }) {
       const response = await api.get(`/api/items/${id}`)
 
       setDetails(response.data.item)
+
+      setPageTitle(`${response.data.item.title} en Mercado Libre`)
     }
 
     loadDetails()

@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import setPageTitle from '../utils/set-page-title'
 
 export default function SearchBox({ history }) {
   const searchformInput = React.createRef()
@@ -13,11 +16,15 @@ export default function SearchBox({ history }) {
     }
   }
 
+  setPageTitle('Mercado Libre')
+
   return (
     <div className="searchbox">
       <div className="searchbox-contents">
 
-        <a href="/" className="meli-logo"><img src="" alt="Mercado Libre"/></a>
+        <Link to="/" className="meli-logo">
+          <img src="" alt="Mercado Libre"/>
+        </Link>
 
         <div className="searchbox-form">
           <form role="search" onSubmit={handleSubmit}>

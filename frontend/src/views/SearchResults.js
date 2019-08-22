@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import api from '../services/api'
+import setPageTitle from '../utils/set-page-title'
 import formatCurrency from '../utils/format-currency'
 
 export default function SearchResults({ location }) {
@@ -15,6 +16,8 @@ export default function SearchResults({ location }) {
       const response = await api.get(`/api/items?q=${query}`)
 
       setResults(response.data.items.slice(0, 4))
+
+      setPageTitle(`${query} en Mercado Libre`)
     }
 
     loadResults()
