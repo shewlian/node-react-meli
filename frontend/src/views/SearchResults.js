@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+import Breadcrumb from '../components/Breadcrumb'
+import SearchResult from '../components/SearchResult'
+
 import api from '../services/api'
 import setPageTitle from '../utils/set-page-title'
-import formatCurrency from '../utils/format-currency'
 
 export default function SearchResults({ location }) {
   const [ results, setResults ] = useState([])
@@ -28,36 +30,14 @@ export default function SearchResults({ location }) {
       <Link to='/'>
         Home
       </Link>
+
+      <Breadcrumb/>
+
       { results.length ? (
         <ol>
           {results.map(result => (
             <li key={result.id}>
-              <article className="media">
-                <Link to={`/items/${result.id}`}>
-                  <figure className="media-left">
-                    <p className="image">
-                      <img src={result.picture} alt={result.title}/>
-                    </p>
-                  </figure>
-                  <div className="media-content">
-                    <h2>{result.title}</h2>
-                    <p>
-                      <strong>
-                        {formatCurrency(result.price.amount)}
-                        {result.price.decimals > 0 &&
-                          <React.Fragment>
-                            <span className="visually-hidden">,</span>
-                            <span>{result.price.decimals}</span>
-                          </React.Fragment>
-                        }
-                      </strong>
-                    </p>
-                    {result.free_shipping &&
-                      <p>Envío gratis</p>
-                    }
-                  </div>
-                </Link>
-              </article>
+              <SearchResult result={result}/>
             </li>
           ))}
         </ol>

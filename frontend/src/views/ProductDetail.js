@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+import Breadcrumb from '../components/Breadcrumb'
+
 import api from '../services/api'
 import setPageTitle from '../utils/set-page-title'
 import formatCurrency from '../utils/format-currency'
@@ -30,6 +32,8 @@ export default function ProductDetail({ match }) {
         Home
       </Link>
       <div className="productdetail-contents">
+        <Breadcrumb/>
+
         <article>
           <div className="productdetail-main">
             <div className="productdetail-info">
