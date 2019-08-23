@@ -3,6 +3,11 @@ body {
   height: 100%;
 }
 
+body,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #root {
   min-height: 100%;
   background-color: #eee;
@@ -10,4 +15,9 @@ body {
 
 .unstyled {
   list-style: none;
+}
+
+.section-container {
+  background-color: #fff;
+  border-radius: 4px 4px 0 0;
 }

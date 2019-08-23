@@ -28,17 +28,24 @@ export default function ProductDetail({ match, location, history }) {
     <React.Fragment>
       <SearchBox location={location} history={history}/>
 
-      <Breadcrumb/>
+      <div className="container container--meli">
+        <div className="columns is-centered">
+          <div className="column is-10">
+            <Breadcrumb/>
 
-      <main className="productdetail">
-        <div className="productdetail-contents">
-
-          { !details
-            ? <p>Cargando...</p>
-            : <ProductDetailComponent details={details}/>
-          }
+            <main className="section-container">
+              { !details
+                ? (
+                  <div className="section">
+                    <p>Cargando...</p>
+                  </div>
+                )
+                : <ProductDetailComponent details={details}/>
+              }
+            </main>
+          </div>
         </div>
-      </main>
+      </div>
     </React.Fragment>
   )
 }

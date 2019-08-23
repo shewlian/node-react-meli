@@ -18,11 +18,11 @@ export default function SearchResult({ result }) {
 
           <div className="search-result-info">
             <p>
-              <strong>
-                <span className="search-result-price">{formatCurrency(result.price.amount)}</span>
+              <strong className="search-result-price">
+                {formatCurrency(result.price.amount)}
                 {result.price.decimals > 0 &&
                   <React.Fragment>
-                    <span className="visually-hidden">,</span>
+                    <span className="is-sr-only">,</span>
                     <span className="search-result-price-decimals">{result.price.decimals}</span>
                   </React.Fragment>
                 }

@@ -34,7 +34,7 @@ export default function SearchResults({ location, history }) {
           <div className="column is-10">
             <Breadcrumb/>
 
-            <main className="search-results">
+            <main className="section-container">
               { !results
                 ? (
                   <div className="section">
