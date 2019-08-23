@@ -25,17 +25,20 @@ export default function ProductDetail({ match, location, history }) {
   }, [match.params])
 
   return (
-    <div className="productdetail">
+    <React.Fragment>
       <SearchBox location={location} history={history}/>
 
-      <div className="productdetail-contents">
-        <Breadcrumb/>
+      <Breadcrumb/>
 
-        { !details
-          ? <p>Cargando...</p>
-          : <ProductDetailComponent details={details}/>
-        }
-      </div>
-    </div>
+      <main className="productdetail">
+        <div className="productdetail-contents">
+
+          { !details
+            ? <p>Cargando...</p>
+            : <ProductDetailComponent details={details}/>
+          }
+        </div>
+      </main>
+    </React.Fragment>
   )
 }
