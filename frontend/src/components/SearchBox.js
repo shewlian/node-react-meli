@@ -27,27 +27,41 @@ export default function SearchBox({ location, history }) {
 
   return (
     <div className="searchbox">
-      <div className="searchbox-contents">
+      <div className="searchbox-contents container">
+        <div className="columns is-vcentered">
+          <div className="column is-1 is-offset-1">
+            <Link to="/" className="meli-logo">
+              <span className="is-sr-only">Mercado Libre</span>
+            </Link>
+          </div>
 
-        <Link to="/" className="meli-logo">
-          <img src="" alt="Mercado Libre"/>
-        </Link>
+          <div className="column is-9">
+            <div className="searchbox-form">
+              <form role="search" onSubmit={handleSubmit}>
+                <div className="field has-addons">
+                  <div className="control is-expanded">
+                    <input
+                      className="searchbox-input input"
+                      id="searchbox-input"
+                      aria-label="Escribe lo que quieres encontrar"
+                      type="text"
+                      defaultValue={searchformInputValue()}
+                      placeholder="Nunca dejes de buscar"
+                      ref={searchformInput}
+                    />
+                  </div>
 
-        <div className="searchbox-form">
-          <form role="search" onSubmit={handleSubmit}>
-            <input
-              className="searchform-input"
-              id="searchbox-input"
-              aria-label="Escribe lo que quieres encontrar"
-              type="text"
-              defaultValue={searchformInputValue()}
-              placeholder="Nunca dejes de buscar"
-              ref={searchformInput}
-            />
-            <button className="searchform-button" type="submit" aria-label="Buscar"><img src="" alt="Buscar"/></button>
-          </form>
+                  <div className="control">
+                    <button className="searchbox-button button" type="submit" aria-label="Buscar">
+                      <span className="searchbox-button-icon" aria-hidden="true"></span>
+                      <span className="is-sr-only">Buscar</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   )
