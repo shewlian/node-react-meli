@@ -10,11 +10,11 @@
   display: block;
   width: 53px;
   height: 36px;
-  background: url(../../images/logo/Logo_ML.png) no-repeat;
+  background: url(../../images/logos/meli.png) no-repeat;
   background-size: 100%;
 
   @include highDPI {
-    background-image: url(../../images/logo/Logo_ML@2x.png);
+    background-image: url(../../images/logos/meli@2x.png);
   }
 }
 
@@ -44,10 +44,10 @@
 .search-box-button-icon {
   width: 18px;
   height: 18px;
-  background: url(../../images/icons/ic_Search.png) no-repeat;
+  background: url(../../images/icons/search.png) no-repeat;
   background-size: 100%;
 
   @include highDPI {
-    background-image: url(../../images/icons/ic_Search@2x.png);
+    background-image: url(../../images/icons/search@2x.png);
   }
 }

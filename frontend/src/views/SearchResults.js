@@ -34,12 +34,16 @@ export default function SearchResults({ location, history }) {
           <div className="column is-10">
             <Breadcrumb/>
 
-            <main className="searchresults">
+            <main className="search-results">
               { !results
-                ? <p>Cargando...</p>
+                ? (
+                  <div className="section">
+                    <p>Cargando...</p>
+                  </div>
+                )
                 : results.length
                 ? (
-                  <ol>
+                  <ol className="unstyled">
                     {results.map(result => (
                       <li key={result.id}>
                         <SearchResult result={result}/>
@@ -48,7 +52,7 @@ export default function SearchResults({ location, history }) {
                   </ol>
                   )
                 : (
-                  <div className="searchresults-none">
+                  <div className="section content">
                     <h2>No hay publicaciones que coincidan con tu búsqueda.</h2>
                     <ul>
                       <li>Revisá la ortografía de la palabra.</li>

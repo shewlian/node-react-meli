@@ -1,0 +1,71 @@
+.search-results {
+  background-color: #fff;
+  border-radius: 4px 4px 0 0;
+}
+
+.search-result {
+  position: relative;
+  color: #333;
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 1.33rem;
+    height: 2px;
+    background-color: #f7f7f7;
+  }
+}
+
+.search-result-link {
+  color: inherit;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.search-result-media-left {
+  margin: 1rem;
+}
+
+.search-result-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-result-media-content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-title {
+  order: 1;
+  margin-top: 2rem;
+  font-size: 18px;
+}
+
+.search-result-info {
+  display: flex;
+  align-items: center;
+}
+
+.search-result-price {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.search-result-free-shipping {
+  display: block;
+  margin-left: 0.75rem;
+  width: 18px;
+  height: 18px;
+  background: url(../../images/icons/shipping.png) no-repeat;
+  background-size: 100%;
+
+  @include highDPI {
+    background-image: url(../../images/icons/shipping@2x.png);
+  }
+}
