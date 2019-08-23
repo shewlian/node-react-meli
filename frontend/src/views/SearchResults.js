@@ -29,32 +29,38 @@ export default function SearchResults({ location, history }) {
     <React.Fragment>
       <SearchBox location={location} history={history}/>
 
-      <Breadcrumb/>
+      <div className="container container--meli">
+        <div className="columns is-centered">
+          <div className="column is-10">
+            <Breadcrumb/>
 
-      <main className="searchresults">
-        { !results
-          ? <p>Cargando...</p>
-          : results.length
-          ? (
-            <ol>
-              {results.map(result => (
-                <li key={result.id}>
-                  <SearchResult result={result}/>
-                </li>
-              ))}
-            </ol>
-            )
-          : (
-            <div className="searchresults-none">
-              <h2>No hay publicaciones que coincidan con tu búsqueda.</h2>
-              <ul>
-                <li>Revisá la ortografía de la palabra.</li>
-                <li>Utilizá palabras más genéricas o menos palabras.</li>
-              </ul>
-            </div>
-            )
-        }
-      </main>
+            <main className="searchresults">
+              { !results
+                ? <p>Cargando...</p>
+                : results.length
+                ? (
+                  <ol>
+                    {results.map(result => (
+                      <li key={result.id}>
+                        <SearchResult result={result}/>
+                      </li>
+                    ))}
+                  </ol>
+                  )
+                : (
+                  <div className="searchresults-none">
+                    <h2>No hay publicaciones que coincidan con tu búsqueda.</h2>
+                    <ul>
+                      <li>Revisá la ortografía de la palabra.</li>
+                      <li>Utilizá palabras más genéricas o menos palabras.</li>
+                    </ul>
+                  </div>
+                  )
+              }
+            </main>
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   )
 }

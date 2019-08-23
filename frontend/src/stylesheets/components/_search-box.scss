@@ -3,7 +3,6 @@
 }
 
 .search-box-contents {
-  max-width: 1176px;
   padding-top: 0.75rem;
 }
 
@@ -31,7 +30,11 @@
 
 .search-box-input {
   box-shadow: none;
-  color: #999;
+  color: #333;
+
+  &::placeholder {
+    color: #999;
+  }
 }
 
 .search-box-button {

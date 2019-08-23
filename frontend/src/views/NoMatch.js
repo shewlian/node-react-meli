@@ -7,7 +7,7 @@ export default function NoMatch({ location, history }) {
       <SearchBox location={location} history={history}/>
 
       <main className="section">
-        <div className="container">
+        <div className="container container--meli">
           <p className="has-text-centered">
             <strong className="has-text-weight-semibold">Parece que la página no existe.</strong>
           </p>

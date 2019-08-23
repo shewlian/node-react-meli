@@ -27,9 +27,9 @@ export default function SearchBox({ location, history }) {
 
   return (
     <div className="search-box">
-      <div className="search-box-contents container">
-        <div className="columns is-vcentered">
-          <div className="column is-1 is-offset-1">
+      <div className="search-box-contents container container--meli">
+        <div className="columns is-centered is-vcentered is-mobile">
+          <div className="column is-1">
             <Link to="/" className="meli-logo">
               <span className="is-sr-only">Mercado Libre</span>
             </Link>

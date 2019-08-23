@@ -1,0 +1,20 @@
+.breadcrumb--meli {
+  margin: 1rem 0 !important;
+  font-size: 14px;
+
+  li + li::before {
+    content: '\003E';
+  }
+
+  a {
+    color: #999;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  .is-current {
+    font-weight: bold;
+  }
+}
