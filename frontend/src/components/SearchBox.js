@@ -52,7 +52,7 @@ export default function SearchBox({ location, history }) {
                   </div>
 
                   <div className="control">
-                    <button className="search-box-button button" type="submit" aria-label="Buscar">
+                    <button className="search-box-button button" type="submit">
                       <span className="search-box-button-icon" aria-hidden="true"></span>
                       <span className="is-sr-only">Buscar</span>
                     </button>
