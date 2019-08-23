@@ -1,8 +1,8 @@
-.searchbox {
+.search-box {
   background-color: #ffe600;
 }
 
-.searchbox-contents {
+.search-box-contents {
   max-width: 1176px;
   padding-top: 0.75rem;
 }
@@ -19,26 +19,26 @@
   }
 }
 
-.searchbox-form {
+.search-box-form {
   margin-left: -0.75rem;
 }
 
-.searchbox-input,
-.searchbox-button {
+.search-box-input,
+.search-box-button {
   border: none;
   font-size: 18px;
 }
 
-.searchbox-input {
+.search-box-input {
   box-shadow: none;
   color: #999;
 }
 
-.searchbox-button {
+.search-box-button {
   background-color: #eee;
 }
 
-.searchbox-button-icon {
+.search-box-button-icon {
   width: 18px;
   height: 18px;
   background: url(../../images/icons/ic_Search.png) no-repeat;

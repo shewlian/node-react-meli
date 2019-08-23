@@ -26,8 +26,8 @@ export default function SearchBox({ location, history }) {
   }
 
   return (
-    <div className="searchbox">
-      <div className="searchbox-contents container">
+    <div className="search-box">
+      <div className="search-box-contents container">
         <div className="columns is-vcentered">
           <div className="column is-1 is-offset-1">
             <Link to="/" className="meli-logo">
@@ -36,13 +36,13 @@ export default function SearchBox({ location, history }) {
           </div>
 
           <div className="column is-9">
-            <div className="searchbox-form">
+            <div className="search-box-form">
               <form role="search" onSubmit={handleSubmit}>
                 <div className="field has-addons">
                   <div className="control is-expanded">
                     <input
-                      className="searchbox-input input"
-                      id="searchbox-input"
+                      className="search-box-input input"
+                      id="search-box-input"
                       aria-label="Escribe lo que quieres encontrar"
                       type="text"
                       defaultValue={searchformInputValue()}
@@ -52,8 +52,8 @@ export default function SearchBox({ location, history }) {
                   </div>
 
                   <div className="control">
-                    <button className="searchbox-button button" type="submit" aria-label="Buscar">
-                      <span className="searchbox-button-icon" aria-hidden="true"></span>
+                    <button className="search-box-button button" type="submit" aria-label="Buscar">
+                      <span className="search-box-button-icon" aria-hidden="true"></span>
                       <span className="is-sr-only">Buscar</span>
                     </button>
                   </div>
